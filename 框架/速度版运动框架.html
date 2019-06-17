@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        font-size: 0;
+    }
+    span{
+        display: inline-block;
+        width: 200px;
+        font-size: 14px;
+        line-height: 30px;
+        border: 1px solid #000;
+        border-radius: 10px;   
+        margin: 3px;
+        text-align: center;
+    }
+    
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let str = "";
+        function ok() {
+            let r = Math.floor(Math.random() * 256)
+            let g = Math.floor(Math.random() * 256)
+            let b = Math.floor(Math.random() * 256)
+            let a = Math.random().toFixed(1);
+
+            str += `<span style="background-color:rgba(${r},${g},${b},${a});">rgba(${r},${g},${b},${a})</span>`
+            document.body.innerHTML = str;
+        }
+        setInterval(ok,500)
+
+
+        
+    </script>
+</body>
+
+</html>
