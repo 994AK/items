@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr = [30, 20, 10, 50, 40]
+        //升序 小 大
+        //冒泡排序
+        /*    let len = arr.length //01234
+           for (let i = 0; i < len - 1; i++) {//0123
+               for (let j = len - 1; j > i; j--) {
+                   if (arr[j] < arr[j - 1]) {
+                       [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]] // a=[b,b=a][0]
+                   }
+               }
+           }
+           console.log(arr); */
+
+
+        //伪随机
+        // arr.sort((a, b) => {
+        //     return Math.random()-0.5//0~1 0.6 0.1
+        // })
+        // console.log(arr);
+
+
+        /* 
+           快速排序
+
+           min更新 每次最小的下标 等全部循环完 min代表最小值的下标
+         */
+        let arr = [6, 70, 50, 30, 40, 5, 20]//下标 6 
+        let len = arr.length;
+        for (let i = 0; i < len - 1; i++) {//0~5
+            let min= i//0最小值标记下标
+            for(let j=i+1;j<len;j++){
+                 if(arr[min]>arr[j]){
+                      min=j
+                 }
+            }
+            [arr[i],arr[min]]=[arr[min],arr[i]]
+        }
+        console.log(arr);
+        
+
+
+    </script>
+</body>
+
+</html>

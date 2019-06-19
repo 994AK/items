@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        /* 
+           （regular expression）一套规则 
+            (regex RE) 取变量名指的是表达正则
+    
+            作用：字符串查询和替换工作
+    
+            exec 通过模式检查字符串 返回第一个匹配成功项
+            test 通过模式检查字符串 返回 布尔值 有则返回true 无则返回false
+            
+            正则:/ 模式 /
+    
+            \ 转义符
+    
+            创建正则：
+            1.字面量直接量 let reg = /5/
+    
+            2.let reg = new RegExp(a)
+
+            元字符：形成规则(模式)用于检索字符串
+            \w \W 
+            w  (匹配 所有的字母 数字 _ "不匹配中文 特殊字符 空格") 
+            W  (匹配 非字母 非数字 非_)
+
+            \d \D
+            
+             d (匹配 所有的数字)
+             D (匹配 非数字)
+            
+            \s \S
+              s (匹配空格)
+              S (匹配非空格)
+
+            \b \B 单词边界 \w
+              b (匹配单词边界 ) 
+               "树枝 |1| 里 |hello| 的我"边界
+              B (匹配非单词边界)
+              "|树|枝| |1| |里| |hello| |的|我|"
+
+            . 匹配单个字符 除了换行  \n \r
+
+            ^ 匹配字符串起始
+
+            $ 字符串结束
+
+            量词{}
+             一般写法 {1,8} 匹配范围 最小次数 是1 最大次数 8
+             默认 贪婪模式匹配  按照最高次去匹配 如果不够 依次降低
+             非贪婪模式 按照最低次匹配 在量词后面加 ？
+
+             特殊写法
+             {5,} //第二个代表无穷
+             {,5} //前面不写 代表 0 
+             {0,} // * 全部
+             {1,} // + 至少匹配 1个
+             {0,1} // ? 可有可无
+
+             标识符
+                 g 全局匹配(global) 不推荐
+
+                 i 忽略大小写
+
+                 m 换行匹配
+
+             子集()
+                 捕获型  能够匹配  能够捕获使用
+
+                 非捕获型 能够匹配  不能够捕获使用
+
+             范围词
+                [] 范围词
+                   [0-9] 代表所有数字项
+                   [a-z] 代表所有字母下   
+                   [\u4e00-\u9fa5] 代表所有的汉字
+                   或者 | 
+
+              正则断言
+
+                     (?=pattern) 零宽正向先行断言(zero-width positive lookahead assertion) 
+                     (?!pattern) 零宽负向先行断言(zero-width negative lookahead assertion) 
+                     (?<=pattern) 零宽正向后行断言(zero-width positive lookbehind assertion) 
+                     (?<!pattern) 零宽负向后行断言(zero-width negative lookbehind assertion) 
+
+
+
+                 
+
+            
+        
+         */
+
+        //创建正则
+        // let str = "树枝 1里hello的树枝"
+
+        //  let reg = /树枝/
+
+        //  console.log(reg.exec(str));
+
+        // let a = "树枝"
+        // let reg = new RegExp(a)
+
+        // let reg =  /\w/        //检查到英文就匹配成功
+        // let reg = /\W/   
+        // let reg = /\d/         //检查到数字匹配成功
+        // let reg = /\D/         //非数字
+
+        // let reg = /\b/g
+        // let reg = /\B/g
+
+        // let reg = /^树枝/g      //匹配字符串起始
+
+        // let reg = /树枝$/g      //匹配到后面的字符串结束
+
+
+
+        // console.log(reg.exec(str));
+        // console.log(str.match(reg));
+
+
+
+        // let str = "aaaabbbb11112222"
+        // let reg = /\d\d\d\d/g //匹配到符合条件的数字 1111  2222   
+        // let reg = /\d{4}/g    //匹配到符合条件的数字 4次   
+
+        // let str = "1树23123里 hello的12树枝"  
+
+        // let reg = /\d{1,3}\d/g
+
+        // let str = "-100"
+
+        // let reg = /-?\d+/g  // :"-100"
+
+        // let str = "杨光杨光杨光杨光"
+
+        // let reg = /(杨光){1,2}/g
+
+
+
+        // let str = "Which"
+
+        // let reg = /which/i 忽略大小写
+
+        // let str = "杨光which\n杨光"
+
+        // let reg = /^杨光/mg
+        // console.log(str);
+        // console.log(reg.exec(str));
+        // console.log(str.match(reg));
+
+        /* 子集() */
+        //捕获型
+        //  let str = "杨光杨光帅哥"
+        //  let reg = /(杨光){2}/
+        // console.log(str.replace(reg,"就是"));
+
+
+        // //非捕获型
+        //  let str = "杨光杨光帅哥"
+        //  let reg = /(?:杨光){2}/
+        // console.log(str.replace(reg,"就是"));
+
+
+        /* 范围词 */
+
+
+
+        console.log(str);
+        console.log(reg.exec(str));
+
+        console.log(str.match(reg));
+
+
+
+
+    </script>
+</body>
+
+</html>
